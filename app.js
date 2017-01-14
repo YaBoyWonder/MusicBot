@@ -1,6 +1,4 @@
-/* eslint no-console: 0 */
 'use strict';
-
 const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
 
@@ -12,29 +10,29 @@ client.login(auth.token).then(() => console.log('logged')).catch(console.error);
 
 const connections = new Map();
 
-client.on('message', m => {
-  if (!m.guild) return;
-  if (m.content.startsWith('&join')) {
-    const channel = m.guild.channels.get(m.content.split(' ')[1]) || m.member.voiceChannel;
+client.on('message', msg => {
+  if (!msg.guild) return;
+  if (msg.content.startsWith('&join')) {
+    const channel = msg.guild.channels.get(msg.content.split(' ')[1]) || msg.member.voiceChannel;
     if (channel && channel.type === 'voice') {
       channel.join().then(conn => {
         conn.player.on('error', (...e) => console.log('player', ...e));
-        if (!connections.has(m.guild.id)) connections.set(m.guild.id, { conn, queue: [] });
-        m.reply('ok!');
+        if (!connections.has(msg.guild.id)) connections.set(msg.guild.id, { conn, queue: [] });
+        msg.reply('ok!');
       });
     } else {
-      m.reply('Specify a voice channel!');
+      msg.reply('Specify a voice channel!');
     }
-  } else if (m.content.startsWith('&play')) {
-    if (connections.has(m.guild.id)) {
-      const connData = connections.get(m.guild.id);
+  } else if (msg.content.startsWith('&play')) {
+    if (connections.has(msg.guild.id)) {
+      const connData = connections.get(msg.guild.id);
       const queue = connData.queue;
-      const url = m.content.split(' ').slice(1).join(' ')
+      const url = msg.content.split(' ').slice(1).join(' ')
         .replace(/</g, '')
         .replace(/>/g, '');
       queue.push({ url, m });
       if (queue.length > 1) {
-        m.reply(`OK, that's going to play after ${queue.length - 1} songs`);
+        msg.reply(`OK, that's going to play after ${queue.length - 1} songs`);
         return;
       }
       doQueue(connData);
