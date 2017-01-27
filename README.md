@@ -1,2 +1,2 @@
 # MusicBot
-A Music Bot for you to host 
+__A Music Bot for you to host__
