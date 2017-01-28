@@ -10,6 +10,6 @@ You are going to need to install...
 
 **ffmpeg**
 
-and **ytdl-core**
+**ytdl-core**
 
-~~If you happen to face any bugs or something is not working right, then send me a comment saying so~~
+If you happen to face any bugs or something is not working right, then send me a comment saying so
