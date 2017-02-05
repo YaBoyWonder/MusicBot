@@ -1,3 +1,4 @@
+![Language](https://img.shields.io/badge/language-node.js-yellow.svg)
 # MusicBot
 __A Discord Music Bot for you to host & play songs on your server__
 
