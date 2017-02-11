@@ -32,7 +32,7 @@ client.on('message', msg => {
         .replace(/>/g, '');
       queue.push({ url, m });
       if (queue.length > 1) {
-        msg.reply(`OK, that's going to play after ${queue.length - 1} songs`);
+        msg.reply(`OK, your song is going to play after ${queue.length - 1} songs`);
         return;
       }
       doQueue(connData);
@@ -48,7 +48,7 @@ function doQueue(connData) {
   const stream = ytdl(item.url, { filter: 'audioonly' }, { passes: 3 });
   const dispatcher = conn.playStream(stream);
   stream.on('info', info => {
-    item.m.reply(`OK, playing **${info.title}**`);
+    item.m.reply(`OK, playing right now **${info.title}**`);
   });
   dispatcher.on('end', () => {
     queue.shift();
