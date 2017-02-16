@@ -12,12 +12,12 @@ const connections = new Map();
 
 client.on('message', msg => {
   if (!msg.guild) return;
-  if (msg.content.startsWith('m.join')) {
+   if (msg.content.startsWith('m.join')) {
     const channel = msg.guild.channels.get(msg.content.split(' ')[1]) || msg.member.voiceChannel;
-    if (channel && channel.type === 'voice') {
-      channel.join().then(conn => {
-        conn.player.on('error', (...e) => console.log('player', ...e));
-        if (!connections.has(msg.guild.id)) connections.set(msg.guild.id, { conn, queue: [] });
+      if (channel && channel.type === 'voice') {
+        channel.join().then(conn => {
+          conn.player.on('error', (...e) => console.log('player', ...e));
+         if (!connections.has(msg.guild.id)) connections.set(msg.guild.id, { conn, queue: [] });
         msg.reply('ok!');
       });
     } else {
