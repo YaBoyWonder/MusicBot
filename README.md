@@ -1,6 +1,6 @@
 ![Language](https://img.shields.io/badge/language-node.js-yellow.svg)
 ![Downloads](https://img.shields.io/badge/downloads-37-blue.svg)
-![Language](https://img.shields.io/badge/style-flat/downloads --squared-blue.svg?style=flat-square)
+![Language](https://img.shields.io/badge/downloads--squared-blue.svg?style=flat-square)
 # MusicBot
 __A Discord Music Bot for you to host & play songs on your server__
 
