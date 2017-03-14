@@ -28,8 +28,8 @@ client.on('message', msg => {
       const connData = connections.get(msg.guild.id);
       const queue = connData.queue;
       const url = msg.content.split(' ').slice(1).join(' ')
-        .replace(/</g, '')
-        .replace(/>/g, '');
+         .replace(/</g, '')
+         .replace(/>/g, '');
       queue.push({ url, m });
       if (queue.length > 1) {
         msg.reply(`OK, your song is going to play after ${queue.length - 1} songs`);
