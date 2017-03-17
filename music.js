@@ -32,7 +32,7 @@ client.on('message', msg => {
          .replace(/>/g, '');
       queue.push({ url, m });
       if (queue.length > 1) {
-        msg.reply(`OK, your song is going to play after ${queue.length - 1} songs`);
+         msg.reply(`OK, your song is going to play after ${queue.length - 1} songs`);
         return;
       }
       doQueue(connData);
