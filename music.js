@@ -17,7 +17,7 @@ client.on('message', msg => {
       if (channel && channel.type === 'voice') {
          channel.join().then(conn => {
           conn.player.on('error', (...e) => console.log('player', ...e));
-         if (!connections.has(msg.guild.id)) connections.set(msg.guild.id, { conn, queue: [] });
+          if (!connections.has(msg.guild.id)) connections.set(msg.guild.id, { conn, queue: [] });
         msg.reply('ok!');
       });
     } else {
