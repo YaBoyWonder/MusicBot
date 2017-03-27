@@ -25,7 +25,7 @@ client.on('message', msg => {
     }
   } else if (msg.content.startsWith('m.play')) {
     if (connections.has(msg.guild.id)) {
-      const connData = connections.get(msg.guild.id);
+       const connData = connections.get(msg.guild.id);
       const queue = connData.queue;
       const url = msg.content.split(' ').slice(1).join(' ')
          .replace(/</g, '')
