@@ -6,7 +6,7 @@ const client = new Discord.Client();
 
 const auth = require('./settings/config.json');
 
-  client.login(settings.token).then(() => console.log('logged')).catch(console.error);
+ client.login(settings.token).then(() => console.log('logged')).catch(console.error);
 
 const connections = new Map();
 
