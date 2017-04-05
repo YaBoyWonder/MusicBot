@@ -52,5 +52,5 @@ function doQueue(connData) {
     queue.shift();
     doQueue(connData);
   });
-  dispatcher.on('error', (...e) => console.log('dispatcher', ...e));
+ dispatcher.on('error', (...e) => console.log('dispatcher', ...e));
 }
