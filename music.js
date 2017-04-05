@@ -18,10 +18,9 @@ client.on('message', msg => {
         if (!connections.has(msg.guild.id)) connections.set(msg.guild.id, { conn, queue: [] });
         msg.reply('ok!');
       });
-    } else {
-      msg.reply('Specify a voice channel!');
-    }
-  } else if (msg.content.startsWith('m.play')) {
+    } else { mg.reply('Specify a voice channel!')};
+ 
+   } else if (msg.content.startsWith('m.play')) {
     if (connections.has(msg.guild.id)) {
        const connData = connections.get(msg.guild.id);
       const queue = connData.queue;
