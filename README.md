@@ -1,6 +1,8 @@
 ![Language](https://img.shields.io/badge/language-node.js-yellow.svg?style=flat-square)
 ![Downloads](https://img.shields.io/badge/downloads-71-blue.svg?style=flat-square)
 # MusicBot
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/YaBoyWonder/MusicBot.svg)](https://greenkeeper.io/)
 __A Discord Music Bot for you to host & play songs on your server__
 
 
