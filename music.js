@@ -17,7 +17,7 @@ client.on('message', msg => {
        msg.reply('ok!');
       });
     } else { mg.reply('Specify a voice channel!')};
- 
+
    } else if (msg.content.startsWith('m.play')) {
     if (connections.has(msg.guild.id)) {
        const connData = connections.get(msg.guild.id);
@@ -25,7 +25,7 @@ client.on('message', msg => {
       const url = msg.content.split(' ').slice(1).join(' ')
          .replace(/</g, '')
          .replace(/>/g, '');
-      queue.push({ url, m });
+       queue.push({ url, m });
       if (queue.length > 1) {
          msg.reply(`OK, your song is going to play after ${queue.length - 1} songs`);
         return;
