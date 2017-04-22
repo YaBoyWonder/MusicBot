@@ -35,19 +35,19 @@ client.on('message', msg => {
   }
 });
 
-function doQueue(connData) {
+ function doQueue(connData) {
   const conn = connData.conn;
-  const queue = connData.queue;
+   const queue = connData.queue;
   const item = queue[0];
-  if (!item) return;
-  const stream = ytdl(item.url, { filter: 'audioonly' }, { passes: 3 });
-  const dispatcher = conn.playStream(stream);
+   if (!item) return;
+    const stream = ytdl(item.url, { filter: 'audioonly' }, { passes: 3 });
+   const dispatcher = conn.playStream(stream);
   stream.on('info', info => {
-    item.m.reply(`OK, playing right now **${info.title}**`);
+     item.m.reply(`OK, playing right now **${info.title}**`);
   });
   dispatcher.on('end', () => {
-    queue.shift();
-    doQueue(connData);
-  });
+     queue.shift();
+     doQueue(connData);
+   });
  dispatcher.on('error', (...e) => console.log('dispatcher', ...e));
 }
