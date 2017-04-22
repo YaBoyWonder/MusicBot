@@ -14,17 +14,17 @@ client.on('message', msg => {
        channel.join().then(conn => {
         conn.player.on('error', (...e) => console.log('player', ...e));
        if (!connections.has(msg.guild.id)) connections.set(msg.guild.id, { conn, queue: [] });
-       msg.reply('ok!');
+        msg.reply('ok!');
       });
-     } else { mg.reply('Specify a voice channel!')};
+      } else { mg.reply('Specify a voice channel!')};
 
-   } else if (msg.content.startsWith('m.play')) {
+    } else if (msg.content.startsWith('m.play')) {
     if (connections.has(msg.guild.id)) {
-       const connData = connections.get(msg.guild.id);
-      const queue = connData.queue;
-      const url = msg.content.split(' ').slice(1).join(' ')
-         .replace(/</g, '')
-         .replace(/>/g, '');
+        const connData = connections.get(msg.guild.id);
+        const queue = connData.queue;
+        const url = msg.content.split(' ').slice(1).join(' ')
+            .replace(/</g, '')
+            .replace(/>/g, '');
        queue.push({ url, m });
       if (queue.length > 1) {
          msg.reply(`OK, your song is going to play after ${queue.length - 1} songs`);
