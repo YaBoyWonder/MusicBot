@@ -16,7 +16,7 @@ client.on('message', msg => {
        if (!connections.has(msg.guild.id)) connections.set(msg.guild.id, { conn, queue: [] });
        msg.reply('ok!');
       });
-    } else { mg.reply('Specify a voice channel!')};
+     } else { mg.reply('Specify a voice channel!')};
 
    } else if (msg.content.startsWith('m.play')) {
     if (connections.has(msg.guild.id)) {
