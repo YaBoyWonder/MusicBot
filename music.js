@@ -31,7 +31,7 @@ client.on('message', msg => {
          msg.reply(`OK, your song is going to play after ${queue.length - 1} songs`);
         return;
       }
-      doQueue(connData);
+       doQueue(connData);
     }
   }
 });
