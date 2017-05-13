@@ -13,5 +13,5 @@ You are going to need to install...
 **ffmpeg**    
 
 **ytdl-core**
-
+ 
 If you happen to face any bugs or something is not working right, then comment the issue here saying so
