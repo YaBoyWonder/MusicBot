@@ -9,7 +9,6 @@ This is a musicbot that I have created for the simplicity of having some music t
 You are going to need to install...
 
 **discord.js,**
-**ffmpeg,**    
-**ytdl-core**
+**ffmpeg,** **ytdl-core**
  
 If you happen to face any bugs or something is not working right, then comment the issue here saying so
