@@ -1,5 +1,5 @@
 ![Language](https://img.shields.io/badge/language-node.js-yellow.svg?style=flat-square)
-![Downloads](https://img.shields.io/badge/downloads-73-blue.svg?style=flat-square)
+![Downloads](https://img.shields.io/badge/downloads-76-blue.svg?style=flat-square)
 ![Language](https://img.shields.io/badge/⭐-4-green.svg?style=social)
 
 # MusicBot
